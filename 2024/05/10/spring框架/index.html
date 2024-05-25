@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://example.com/images/spring-2.png">
 <meta property="og:image" content="http://example.com/images/spring-3.png">
 <meta property="article:published_time" content="2024-05-10T10:04:57.000Z">
-<meta property="article:modified_time" content="2024-05-20T12:16:27.013Z">
+<meta property="article:modified_time" content="2024-05-21T12:58:00.545Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/spring-1.png">
@@ -102,9 +102,17 @@
 <p>创建对象&#x3D;getBean(“要获取的对象”)方法；<br>然后调用bookService.save();就能够得到文本也就是值；</p>
 <p><strong>@RequestMapping(“&#x2F;admin”)</strong><br>在Spring框架中，特别是Spring MVC，@RequestMapping是一个用来映射HTTP请求到控制器处理方法的注解。当你在一个类或方法上使用@RequestMapping注解时，你定义了一个URL模式，Spring容器将根据这个模式将请求路由到相应的处理器方法。<br><em>这个注解会将所有标记了&#x2F;admin的URL路径映射到这个类中的处理方法上。也就是说，任何以&#x2F;admin开始的URL路径都将由这个类中的某个方法来处理。</em>（映射到admin上）</p>
 <p>@RequestMapping(value &#x3D; “&#x2F;reg”, <strong>method &#x3D; RequestMethod.GET</strong>)<br>value &#x3D; “&#x2F;reg”：定义了URL映射，意味着当一个GET请求的URL路径是&#x2F;reg时，Spring MVC会调用这个方法。<br><em>method &#x3D; RequestMethod.GET：<strong>指定了HTTP请求方法为GET，这表示只有当HTTP请求类型为GET时，这个方法才会被触发。</strong></em></p>
+<p>@PostMapping 是 @RequestMapping 注解的一个特化形式，专门用于处理 <strong>HTTP POST</strong> 请求。POST 请求通常用于向服务器提交数据，这些数据会包含在请求体中</p>
 <p><em>final：表示一旦变量被初始化后，就不能再重新赋值。</em></p>
 <p>@Autowired 可标注在构造方法上，setter方法上或者是@Bean方法上<br><img src="/images/spring-2.png" alt="图片"></p>
 <p><img src="/images/spring-3.png" alt="图片"></p>
+<p>@RestController 和 @RequestMapping ：用于创建RESTful web服务<br><em>@RestController &#x3D; @Controller + @ResponseBody</em><br>@RestController  它提供JSON，XML和自定义响应</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class ProductServiceController &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>@RequestMappping  用于定义访问REST端点的Request URL。可以定义Request方法来使用和生成对象。默认请求方法是:GET。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value = &quot;/products&quot;)</span><br><span class="line">public ResponseEntity&lt;Object&gt; getProducts() &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
