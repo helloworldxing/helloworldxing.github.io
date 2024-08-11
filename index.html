@@ -69,6 +69,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-springboot-vue3-项目知识点及总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/25/springboot-vue3-%E9%A1%B9%E7%9B%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8F%8A%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-07-25T15:45:49.000Z" itemprop="datePublished">2024-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/07/25/springboot-vue3-%E9%A1%B9%E7%9B%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8F%8A%E6%80%BB%E7%BB%93/">springboot+vue3 项目知识点及总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>快捷键</strong>：<br>多行注释：   ctrl+shift+&#x2F;<br>try…catch…:   ctrl+alt+T<br>快速生成变量名：   alt+回车</p>
+<p><strong>springboot自动配置原理：</strong><br>1.在主启动类上添加了SpringBootApplication注解，这个注解结合了EnableAutoConfiguration注解<br>2.EnableAutoConfiguration注解又结合了Import注解，导入了AutoConfigurationImportSelector类<br>3.实现selectImports方法，这个方法经过层层调用，最终会读取META-INF目录下的后缀名为imports的文件，当然了，boot2.7以前的版本读取的是spring.factories文件<br>4.读取到了全类名之后，会解析注册条件，也就是@Conditional及其衍生注解，把满足注册条件的Bean对象自动注入到IOC容器中</p>
+<p><strong>@JsonIgnore</strong>  让springmvc把当前的对象转换成json字符串时，忽略password属性,也就是不返回password了</p>
+<p><strong>JWT令牌</strong>（JSON Web Tokens）是一种用于在网络应用环境间传递声明（claims）的方式。JWT的声明被编码为JSON对象，并且可以被数字签名以验证其内容是否被篡改。JWT<strong>主要用于身份验证和信息交换</strong>，常用于以下场景：</p>
+<p>身份验证：用户登录后，服务器可以生成一个包含用户身份信息的JWT，然后将其发送给客户端。客户端在后续请求中携带这个JWT，服务器通过验证JWT来确认用户的身份。</p>
+<p>授权：JWT可以包含权限信息，服务端可以通过验证JWT中的权限声明来决定是否允许用户执行特定的操作。</p>
+<p>一个JWT通常由三部分组成，用点（.）分隔：<br>Header（头部）：描述了令牌的类型（JWT）和所使用的签名算法（如HS256）。<br>Payload（负载）：包含了所谓的Claims（声明），它们是关于实体（通常是用户）和其他数据的声明。Payload可以包含多个预定义的声明（java-jwt 4.0.0以上使用）<br>Signature（签名）：用于验证消息在传输过程中未被篡改，并且，对于使用私钥签名的令牌，还可以验证发送者的身份。</p>
+<p><strong>拦截器</strong>使用时需注意哪些不能拦截，用excludePathPatterns除去不需要拦截的路径<br>eg:registry.addInterceptor(LoginInterceptor).<em><strong>excludePathPatterns</strong></em>(“&#x2F;user&#x2F;login”,”&#x2F;user&#x2F;register”);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/25/springboot-vue3-%E9%A1%B9%E7%9B%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8F%8A%E6%80%BB%E7%BB%93/" data-id="clzpkp6mw0004mcv50gj04fwk" data-title="springboot+vue3 项目知识点及总结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-大二下校企合作知识点" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/07/16/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E6%A0%A1%E4%BC%81%E5%90%88%E4%BD%9C%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-date">
@@ -103,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/16/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E6%A0%A1%E4%BC%81%E5%90%88%E4%BD%9C%E7%9F%A5%E8%AF%86%E7%82%B9/" data-id="clyo6g93f000b6wv5dx9k9bam" data-title="校企合作知识点" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/07/16/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E6%A0%A1%E4%BC%81%E5%90%88%E4%BD%9C%E7%9F%A5%E8%AF%86%E7%82%B9/" data-id="clzpkp6mz000bmcv5f1m456ct" data-title="校企合作知识点" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -144,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/28/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/" data-id="clyo6g93g000c6wv550ma94yq" data-title="微服务架构" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/05/28/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84/" data-id="clzpkp6n0000cmcv55i8aau4w" data-title="微服务架构" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -186,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/21/hexo%E6%8A%A5%E9%94%99/" data-id="clyo6g93a00026wv53fvlhqo5" data-title="hexo报错以及其他问题" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/05/21/hexo%E6%8A%A5%E9%94%99/" data-id="clzpkp6mu0001mcv5fsmw3xj1" data-title="hexo报错以及其他问题" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -240,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/10/spring%E6%A1%86%E6%9E%B6/" data-id="clyo6g93b00036wv51bjh70fs" data-title="spring框架" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/05/10/spring%E6%A1%86%E6%9E%B6/" data-id="clzpkp6my0006mcv55mpl51t7" data-title="spring框架" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -433,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/19/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" data-id="clyo6g93900016wv5amnk3bam" data-title="linux常见命令" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/19/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" data-id="clzpkp6mv0002mcv5f2hg0zop" data-title="linux常见命令" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -473,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/18/%E5%91%A8%E6%80%BB%E7%BB%931/" data-id="clyo6g93c00056wv58ih9cqvg" data-title="周总结1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/04/18/%E5%91%A8%E6%80%BB%E7%BB%931/" data-id="clzpkp6my0008mcv51l33bw7e" data-title="周总结1" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -513,7 +559,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/31/%E8%BF%9B%E5%88%B6%E5%8F%98%E5%BD%A2/" data-id="clyo6g93g000d6wv54cdkh5e6" data-title="进制变形" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/31/%E8%BF%9B%E5%88%B6%E5%8F%98%E5%BD%A2/" data-id="clzpkp6n0000dmcv52dpu19p3" data-title="进制变形" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -568,7 +614,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/%E5%89%8D%E7%BC%80%E5%92%8C%E5%8F%8A%E5%B7%AE%E5%88%86/" data-id="clyo6g93d00076wv5ckyaaqt9" data-title="前缀和及差分" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/23/%E5%89%8D%E7%BC%80%E5%92%8C%E5%8F%8A%E5%B7%AE%E5%88%86/" data-id="clzpkp6mw0003mcv59qmibdjr" data-title="前缀和及差分" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -609,7 +655,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/%E5%8F%8C%E6%8C%87%E9%92%88/" data-id="clyo6g93b00046wv598fd2qp5" data-title="双指针" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/23/%E5%8F%8C%E6%8C%87%E9%92%88/" data-id="clzpkp6my0007mcv53cm13lko" data-title="双指针" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -623,58 +669,12 @@
 
 
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-03-20T05:21:43.278Z" itemprop="datePublished">2024-03-20</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/hello-world/" data-id="clyo6g93600006wv59blm5jom" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -719,6 +719,10 @@
       <ul>
         
           <li>
+            <a href="/2024/07/25/springboot-vue3-%E9%A1%B9%E7%9B%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8F%8A%E6%80%BB%E7%BB%93/">springboot+vue3 项目知识点及总结</a>
+          </li>
+        
+          <li>
             <a href="/2024/07/16/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E6%A0%A1%E4%BC%81%E5%90%88%E4%BD%9C%E7%9F%A5%E8%AF%86%E7%82%B9/">校企合作知识点</a>
           </li>
         
@@ -732,10 +736,6 @@
         
           <li>
             <a href="/2024/05/10/spring%E6%A1%86%E6%9E%B6/">spring框架</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/19/linux%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/">linux常见命令</a>
           </li>
         
       </ul>
