@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<!-- Head -->
+<head>
+  <meta charset="utf-8">
+  
+  <title>springboot+vue3 项目知识点及总结 | 有用的知识</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="快捷键：多行注释：   ctrl+shift+&#x2F;try…catch…:   ctrl+alt+T快速生成变量名：   alt+回车 springboot自动配置原理：1.在主启动类上添加了SpringBootApplication注解，这个注解结合了EnableAutoConfiguration注解2.EnableAutoConfiguration注解又结合了Import注解，导入了Au">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot+vue3 项目知识点及总结">
+<meta property="og:url" content="http://example.com/2024/07/25/springboot+vue3%20%E9%A1%B9%E7%9B%AE%E7%9F%A5%E8%AF%86%E7%82%B9%E5%8F%8A%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="有用的知识">
+<meta property="og:description" content="快捷键：多行注释：   ctrl+shift+&#x2F;try…catch…:   ctrl+alt+T快速生成变量名：   alt+回车 springboot自动配置原理：1.在主启动类上添加了SpringBootApplication注解，这个注解结合了EnableAutoConfiguration注解2.EnableAutoConfiguration注解又结合了Import注解，导入了Au">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-25T15:45:49.000Z">
+<meta property="article:modified_time" content="2025-04-25T07:41:33.991Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="有用的知识" type="application/atom+xml">
+  
+  
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/css/share.min.css">
+    <style>
+        .hljs-line-numbers {
+            text-align: right;
+            border-right: 1px solid #ccc;
+            color: #999;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+    <!-- 
+<link rel="stylesheet" href="/css/code.css">
+ -->
+    <link rel="stylesheet" href="/css/style.css?version=6-12-47-16" type="text/css">
+    <link rel="stylesheet" href="/css/code.css?version=6-12-47-16" type="text/css">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+
+<header>
+    <div class="navbar-fixed">
+        <nav class="blue darken-3 nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="hide-on-med-and-down">
+                    
+                        <li><a href="/" class="nav-logo">有用的知识</a></li>
+                    
+                    
+                    <li><a class="" href="/">Home</a></li>
+                    
+                    <li><a class="" href="/archives">Archives</a></li>
+                    
+                    <li><a class="" href="/categories">Categories</a></li>
+                    
+                    <li><a class="" href="/tags">Tags</a></li>
+                    
+                    <li><a class="" href="/links">Links</a></li>
+                    
+                    <li><a class="" href="/about">About</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <ul class="side-nav" id="mobile-demo">
+        
+        <li><a class="" href="/">Home</a></li>
+        
+        <li><a class="" href="/archives">Archives</a></li>
+        
+        <li><a class="" href="/categories">Categories</a></li>
+        
+        <li><a class="" href="/tags">Tags</a></li>
+        
+        <li><a class="" href="/links">Links</a></li>
+        
+        <li><a class="" href="/about">About</a></li>
+        
+    </ul>
+    <!--You have to move ul out to make sure this work in mobile environment-->
+</header>
+
+
+<div class="container">
+      <article class="article-full">
+
+    <!-- Title -->
+    <h2 class="blog-item-title">
+        <a href="/2024/07/25/springboot+vue3 项目知识点及总结/">
+            springboot+vue3 项目知识点及总结
+        </a>
+    </h2>
+
+    <!-- Date and Author -->
+    <p class="blog-item-meta">
+        Published on 2024 Jul 25 23:45:49
+        
+    
+        </br>
+        Last Updated on 2025 Apr 25 15:41:33
+        
+    </p>
+
+
+    <!-- Content -->
+    <p><strong>快捷键</strong>：<br>多行注释：   ctrl+shift+&#x2F;<br>try…catch…:   ctrl+alt+T<br>快速生成变量名：   alt+回车</p>
+<p><strong>springboot自动配置原理：</strong><br>1.在主启动类上添加了SpringBootApplication注解，这个注解结合了EnableAutoConfiguration注解<br>2.EnableAutoConfiguration注解又结合了Import注解，导入了AutoConfigurationImportSelector类<br>3.实现selectImports方法，这个方法经过层层调用，最终会读取META-INF目录下的后缀名为imports的文件，当然了，boot2.7以前的版本读取的是spring.factories文件<br>4.读取到了全类名之后，会解析注册条件，也就是@Conditional及其衍生注解，把满足注册条件的Bean对象自动注入到IOC容器中</p>
+<p><strong>@JsonIgnore</strong>  让springmvc把当前的对象转换成json字符串时，忽略password属性,也就是不返回password了</p>
+<p><strong>JWT令牌</strong>（JSON Web Tokens）是一种用于在网络应用环境间传递声明（claims）的方式。JWT的声明被编码为JSON对象，并且可以被数字签名以验证其内容是否被篡改。JWT<strong>主要用于身份验证和信息交换</strong>，常用于以下场景：</p>
+<p>身份验证：用户登录后，服务器可以生成一个包含用户身份信息的JWT，然后将其发送给客户端。客户端在后续请求中携带这个JWT，服务器通过验证JWT来确认用户的身份。</p>
+<p>授权：JWT可以包含权限信息，服务端可以通过验证JWT中的权限声明来决定是否允许用户执行特定的操作。</p>
+<p>一个JWT通常由三部分组成，用点（.）分隔：<br>Header（头部）：描述了令牌的类型（JWT）和所使用的签名算法（如HS256）。<br>Payload（负载）：包含了所谓的Claims（声明），它们是关于实体（通常是用户）和其他数据的声明。Payload可以包含多个预定义的声明（java-jwt 4.0.0以上使用）<br>Signature（签名）：用于验证消息在传输过程中未被篡改，并且，对于使用私钥签名的令牌，还可以验证发送者的身份。</p>
+<p><strong>拦截器</strong>使用时需注意哪些不能拦截，用excludePathPatterns除去不需要拦截的路径<br>eg:registry.addInterceptor(LoginInterceptor).<em><strong>excludePathPatterns</strong></em>(“&#x2F;user&#x2F;login”,”&#x2F;user&#x2F;register”);<br>postman  401 UnAuthorized 原因1： JWT令牌过期了  原因2:WebConfig 里面的 excludePathPatterns没有加入&#x2F;user&#x2F;update</p>
+<p><strong>更新用户头像</strong><br>使用Patch，因为更新头像只是更新部分信息，所以用Patch</p>
+<p><strong>@NotNull和@NotEmpty的区别：</strong></p>
+<ul>
+<li>使用<code>@NotNull</code>来检查一个对象是否被实例化了，不是<code>null</code>。</li>
+<li>使用<code>@NotEmpty</code>来检查一个对象不仅不是<code>null</code>，而且它的内容（比如字符串的长度或者集合的元素数量）也必须大于零。</li>
+</ul>
+<p><strong>@Validate的默认分组</strong></p>
+<p>@Validated：提供了一个分组功能，可以在入参验证时，根据不同的分组采用不同的验证机制</p>
+<p>分组校验的基本使用</p>
+<ol>
+<li><p>定义分组：首先，你需要定义一些接口来作为分组的标识。例如，你可以为创建和更新操作分别定义两个接口：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AddGroup</span> &#123;&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UpdateGroup</span> &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>2.在实体类上应用分组：然后，你可以在实体类的字段上使用这些分组。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@NotNull(message = &quot;ID不能为空&quot;, groups = UpdateGroup.class)</span><br><span class="line">private Integer id;</span><br><span class="line"></span><br><span class="line">@NotBlank(message = &quot;用户名不能为空&quot;, groups = &#123;AddGroup.class, UpdateGroup.class&#125;)</span><br><span class="line">private String username;</span><br></pre></td></tr></table></figure>
+
+<p>3.在Controller中使用分组：在Controller的方法参数中，你可以通过<strong>指定分组来激活特定的校验规则</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@PostMapping(&quot;/add&quot;)</span><br><span class="line">public ResponseEntity&lt;?&gt; add(@Validated(AddGroup.class) User user) &#123;</span><br><span class="line">    // 添加操作</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@PostMapping(&quot;/update&quot;)</span><br><span class="line">public ResponseEntity&lt;?&gt; update(@Validated(UpdateGroup.class) User user) &#123;</span><br><span class="line">    // 更新操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>自定义校验</strong>：已有的注解不能满足所以的校验需求，特殊的情况需要自定义校验（自定义校验注解）</p>
+<p>1.自定义注解State</p>
+<p>2.自定义校验数据的类StateValidation，实现ConstraintValidator接口</p>
+<p>3.在需要校验的地方使用自定义注解</p>
+
+
+    <hr/>
+
+    
+        <div class="social-share" data-disabled="weibo,qzone,qq,tencent,douban,linkedin,diandian"></div>
+    
+
+    <div class="blog-post">
+
+    <!--[...]-->
+    
+    <!-- Comments -->
+</div>
+
+    <!-- Tags and Categories links -->
+
+
+</article>
+
+
+</div>
+
+
+<footer class="grey darken-3">
+    <div class="footer-link">
+        
+        
+        
+        
+        
+        
+        
+          <a href="/atom.xml" target="_blank" title="rss_feed"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+        
+    </div>
+    <div class="footer-ps">
+        <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -
+            &copy; 2025 <a
+                    
+            > John Doe</a> - Theme <a href="https://github.com/lazzzis/hexo-theme-mls" target="_blank">MLS</a>
+        </p>
+    </div>
+</footer>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/js/social-share.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+
+<script src="/js/addition.js"></script>
+
+
+<script src="/js/zooming.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script>
+    // https://github.com/srobbin/jquery-backstretch
+    $.backstretch("/css/images/background.jpg?version=6-12-47-16");
+
+    
+
+</script>
+
+
+</body>
+
+</html>

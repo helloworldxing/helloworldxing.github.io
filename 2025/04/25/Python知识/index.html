@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<!-- Head -->
+<head>
+  <meta charset="utf-8">
+  
+  <title>有用的知识</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python something1.Python中self用法#python中内置的__init__方法class Student(object):    def __init__(self, name, score):        self.name &#x3D; name        self.score &#x3D; score  self有点类似this   self指类本身  self.name就是St">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有用的知识">
+<meta property="og:url" content="http://example.com/2025/04/25/Python%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="有用的知识">
+<meta property="og:description" content="Python something1.Python中self用法#python中内置的__init__方法class Student(object):    def __init__(self, name, score):        self.name &#x3D; name        self.score &#x3D; score  self有点类似this   self指类本身  self.name就是St">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-25T07:31:33.773Z">
+<meta property="article:modified_time" content="2025-06-12T05:22:03.367Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="有用的知识" type="application/atom+xml">
+  
+  
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/css/share.min.css">
+    <style>
+        .hljs-line-numbers {
+            text-align: right;
+            border-right: 1px solid #ccc;
+            color: #999;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+    <!-- 
+<link rel="stylesheet" href="/css/code.css">
+ -->
+    <link rel="stylesheet" href="/css/style.css?version=6-12-47-16" type="text/css">
+    <link rel="stylesheet" href="/css/code.css?version=6-12-47-16" type="text/css">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+
+<header>
+    <div class="navbar-fixed">
+        <nav class="blue darken-3 nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="hide-on-med-and-down">
+                    
+                        <li><a href="/" class="nav-logo">有用的知识</a></li>
+                    
+                    
+                    <li><a class="" href="/">Home</a></li>
+                    
+                    <li><a class="" href="/archives">Archives</a></li>
+                    
+                    <li><a class="" href="/categories">Categories</a></li>
+                    
+                    <li><a class="" href="/tags">Tags</a></li>
+                    
+                    <li><a class="" href="/links">Links</a></li>
+                    
+                    <li><a class="" href="/about">About</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <ul class="side-nav" id="mobile-demo">
+        
+        <li><a class="" href="/">Home</a></li>
+        
+        <li><a class="" href="/archives">Archives</a></li>
+        
+        <li><a class="" href="/categories">Categories</a></li>
+        
+        <li><a class="" href="/tags">Tags</a></li>
+        
+        <li><a class="" href="/links">Links</a></li>
+        
+        <li><a class="" href="/about">About</a></li>
+        
+    </ul>
+    <!--You have to move ul out to make sure this work in mobile environment-->
+</header>
+
+
+<div class="container">
+      <article class="article-full">
+
+    <!-- Title -->
+    <h2 class="blog-item-title">
+        <a href="/2025/04/25/Python知识/">
+            
+        </a>
+    </h2>
+
+    <!-- Date and Author -->
+    <p class="blog-item-meta">
+        Published on 2025 Apr 25 15:31:33
+        
+    
+        </br>
+        Last Updated on 2025 Jun 12 13:22:03
+        
+    </p>
+
+
+    <!-- Content -->
+    <h1 id="Python-something"><a href="#Python-something" class="headerlink" title="Python something"></a>Python something</h1><h2 id="1-Python中self用法"><a href="#1-Python中self用法" class="headerlink" title="1.Python中self用法"></a>1.Python中self用法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#python中内置的__init__方法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, score</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.score = score</span><br></pre></td></tr></table></figure>
+
+<p>self有点类似this   self指类本身  self.name就是Student类的属性变量</p>
+<p>self.name &#x3D; name 意思就是将外部传来的值赋值给Student类自己的属性变量self.name</p>
+<p>注意：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#（1）、__init__方法的第一参数永远是self，表示创建的类实例本身，因此，在__init__方法内部，就可以把各种属性绑定到self，因为self就指向创建的实例本身。</span></span><br><span class="line"><span class="comment">#（2）、有了__init__方法，在创建实例的时候，就不能传入空的参数了，必须传入与__init__方法匹配的参数，但self不需要传，Python解释器会自己把实例变量传进去：</span></span><br></pre></td></tr></table></figure>
+
+<p>如果要让内部属性不被外部访问，<strong>可以把属性的名称前加上两个下划线</strong></p>
+<p>__name表示实例的这个变量是私有的，外部不能访问，只能内部访问</p>
+<p><em>*<em>args是可变参数，args接收的是一个tuple<strong>，</strong></em></em>kw是关键字参数，kw接收的是一个dict</p>
+<h2 id="2-request"><a href="#2-request" class="headerlink" title="2. request"></a>2. request</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#当需要获取前端页面表单传过来的id值的时候，我们就需要用request.args.get,而不能用request.form</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-flask框架"><a href="#3-flask框架" class="headerlink" title="3.flask框架"></a>3.flask框架</h2><h4 id="jsonify"><a href="#jsonify" class="headerlink" title="jsonify"></a><strong>jsonify</strong></h4><p>jsonify的作用实际上就是将我们传入的json形式数据序列化成为json字符串，作为响应的body，并且设置响应的Content-Type为application&#x2F;json，构造出响应返回至客户端。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>():</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">   app.run()</span><br><span class="line"></span><br><span class="line"><span class="comment">#Flask构造函数使用当前模块（__name __）的名称作为参数。</span></span><br><span class="line"><span class="comment">#Flask类的route()函数是一个装饰器，它告诉应用程序哪个URL应该调用相关的函数。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line">如果访问/，浏览器返回“Index Page”</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Index Page&#x27;</span></span><br><span class="line"> </span><br><span class="line">如果访问/hello，浏览器返回“Hello,World”</span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/hello&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello, World&#x27;</span></span><br><span class="line"><span class="keyword">if</span> __name__ =<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Flask-HTTP方法"><a href="#Flask-HTTP方法" class="headerlink" title="Flask HTTP方法"></a><strong>Flask HTTP方法</strong></h4><h5 id="GET"><a href="#GET" class="headerlink" title="GET"></a><strong>GET</strong></h5><p>浏览器通知服务器只获取页面上的信息并且发送回来</p>
+<h5 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a><strong>HEAD</strong></h5><p>浏览器告诉服务器获取信息，但是只对头信息感兴趣，不需要整个页面的内容。应用应该处理起来像接收到一个 GET 请求但是不传递实际内容。在 Flask 中你完全不需要处理它，底层的 Werkzeug 库会为你处理的。</p>
+<h5 id="POST"><a href="#POST" class="headerlink" title="POST"></a><strong>POST</strong></h5><p>浏览器通知服务器它要在 URL 上提交一些信息，服务器必须保证数据被存储且只存储一次。这是 HTML 表单通常发送数据到服务器的方法。POST方法接收的数据不由服务器缓存。</p>
+<h5 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a><strong>PUT</strong></h5><p>用上传的内容替换目标资源的所有当前表示，而且服务器可能触发了多次存储过程，多次覆盖掉旧值。。考虑在传输过程中连接丢失的情况：浏览器和服务器之间的系统可能安全地第二次接收请求，而不破坏其它东西。该过程操作 POST 方法是不可能实现的，因为它只会被触发一次。</p>
+<h5 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a><strong>DELETE</strong></h5><p>移除给定位置的信息。</p>
+<h5 id="OPTIONS"><a href="#OPTIONS" class="headerlink" title="OPTIONS"></a><strong>OPTIONS</strong></h5><p> 给客户端提供一个快速的途径来指出这个 URL 支持哪些 HTTP 方法。从 Flask 0.6 开始，自动实现了该功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login&#x27;</span>, methods=[<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>():</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        do_the_login()        <span class="comment">#如果是POST方法就执行登录操作</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        show_the_login_form()   <span class="comment">#如果是GET方法就展示登录表单</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>以HTML的形式返回绑定到某个URL的函数的输出</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&#x27;&lt;html&gt;&lt;body&gt;&lt;h1&gt;&#x27;</span>Hello World<span class="string">&#x27;&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">   app.run(debug = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#hello()函数将使用&lt;h1&gt;标签呈现&#x27;Hello World&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><em><strong>*Jinja2模板引擎使用以下分隔符从HTML转义：*</strong></em></p>
+<ul>
+<li><pre><code class="java">//- &#123;% ... %&#125;用于语句
+//- &#123;&#123; ... &#125;&#125;用于表达式可以打印到模板输出
+//- 用于未包含在模板输出中的注释
+//- \# ... ##用于行语句
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">from flask import Flask, render_template</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"> </span><br><span class="line">@app.route(&#x27;/hello/&lt;int:score&gt;&#x27;)</span><br><span class="line">def hello_name(score):</span><br><span class="line">   return render_template(&#x27;hello.html&#x27;, marks = score)</span><br><span class="line"> </span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">   app.run(debug = True)</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">      &#123;% if marks&gt;50 %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span> Your result is pass!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      &#123;% else %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Your result is fail<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      &#123;% endif %&#125;      </span><br><span class="line">   <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="重定向与错误"><a href="#重定向与错误" class="headerlink" title="重定向与错误"></a><strong>重定向与错误</strong></h4><p>用<code>redirect()</code>函数重定向用户到其它地方。能够用<code>abort()</code>函数提前中断一个请求并带有一个错误代码。</p>
+<p><code>redirect()</code>函数原型如下：</p>
+<p><code>Flask.redirect(location, statuscode, response)</code></p>
+<ul>
+<li>location参数是应该重定向响应的URL。</li>
+<li>statuscode发送到浏览器标头，默认为302。</li>
+<li>response参数用于实例化响应。</li>
+</ul>
+<p>Flask类具有带有错误代码的**abort()**函数。</p>
+<p><code>Flask.abort(code)</code></p>
+<p>Code参数采用以下值之一：</p>
+<ul>
+<li>400 - 用于错误请求</li>
+<li>401 - 用于未身份验证的</li>
+<li>403 - Forbidden</li>
+<li>404 - 未找到</li>
+<li>406 - 表示不接受</li>
+<li>415 - 用于不支持的媒体类型</li>
+<li>429 - 请求过多</li>
+</ul>
+<h2 id="OpenAPI"><a href="#OpenAPI" class="headerlink" title="OpenAPI"></a>OpenAPI</h2><p>Open API 即开放 API，也称开放平台。 所谓的开放 API（OpenAPI）是服务型网站常见的一种应用，网站的服务商将自己的网站服务封装成一系列API（Application Programming Interface，应用编程接口）开放出去，供第三方开发者使用，这种行为就叫做开放网站的 API，所开放的 API 就被称作 OpenAPI（开放 API ）。</p>
+<h2 id="f-string（格式化字符串字面量）"><a href="#f-string（格式化字符串字面量）" class="headerlink" title="f-string（格式化字符串字面量）"></a>f-string（格式化字符串字面量）</h2><p>它是 Python 3.6 引入的一种字符串格式化方法，允许你在字符串中嵌入表达式，并自动对这些表达式进行求值，最终将它们格式化为字符串。</p>
+<p>具体来说，<code>f&quot;Respond in the &#123;self.language&#125; language.&quot;</code> 中的 <code>f</code> 表示这是一个 f-string，并且 <code>&#123;self.language&#125;</code> 是一个占位符，会在运行时被替换成 <code>self.language</code> 的值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">self.language = <span class="string">&quot;English&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Respond in the <span class="subst">&#123;self.language&#125;</span> language.&quot;</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt;`Respond <span class="keyword">in</span> the English language.`</span><br></pre></td></tr></table></figure>
+
+<h2 id="rpyc"><a href="#rpyc" class="headerlink" title="rpyc"></a>rpyc</h2><p>python中的远程过程调用</p>
+<h3 id="异步调用：在处理耗时较长的任务时使用（代码适用于rpyc库版本-5-0）"><a href="#异步调用：在处理耗时较长的任务时使用（代码适用于rpyc库版本-5-0）" class="headerlink" title="异步调用：在处理耗时较长的任务时使用（代码适用于rpyc库版本&gt;&#x3D;5.0）"></a>异步调用：在处理耗时较长的任务时使用（代码适用于rpyc库版本&gt;&#x3D;5.0）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#服务器端</span></span><br><span class="line"><span class="keyword">import</span> rpyc</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyService</span>(rpyc.Service):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exposed_long_task</span>(<span class="params">self, x</span>):</span><br><span class="line">        time.sleep(x)  <span class="comment"># 模拟耗时任务</span></span><br><span class="line">        <span class="keyword">return</span> x * <span class="number">2</span>   <span class="comment"># 返回计算结果</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">from</span> rpyc.utils.server <span class="keyword">import</span> ThreadedServer</span><br><span class="line">    server = ThreadedServer(MyService, port=<span class="number">18861</span>)</span><br><span class="line">    server.start()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#客户端</span></span><br><span class="line"><span class="keyword">import</span> rpyc</span><br><span class="line"></span><br><span class="line">conn = rpyc.connect(<span class="string">&quot;localhost&quot;</span>, <span class="number">18861</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 让 long_task 变成异步调用</span></span><br><span class="line">async_long_task = rpyc.async_(conn.root.long_task)</span><br><span class="line">async_result = async_long_task(<span class="number">10</span>)  <span class="comment"># 触发异步调用</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;任务已提交，等待结果...&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Result:&quot;</span>, async_result.value)  <span class="comment"># 获取异步结果</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#结果得到：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#任务已提交，等待结果...</span></span><br><span class="line"><span class="comment">#Result: 20</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="双向通信"><a href="#双向通信" class="headerlink" title="双向通信"></a>双向通信</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#服务器端</span></span><br><span class="line"><span class="keyword">import</span> rpyc</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyService</span>(rpyc.Service):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">on_connect</span>(<span class="params">self, conn</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;客户端已连接&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">on_disconnect</span>(<span class="params">self, conn</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;客户端已断开连接&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exposed_server_method</span>(<span class="params">self, msg</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;服务器端方法，客户端可以调用&quot;&quot;&quot;</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;服务器收到: <span class="subst">&#123;msg&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;服务器处理后: <span class="subst">&#123;msg.upper()&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exposed_call_client</span>(<span class="params">self, client_obj</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;服务器调用客户端提供的方法&quot;&quot;&quot;</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;服务器正在调用客户端方法...&quot;</span>)</span><br><span class="line">        response = client_obj.exposed_client_method(<span class="string">&quot;你好，客户端！&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;服务器收到客户端的响应: <span class="subst">&#123;response&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;服务器完成回调&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">from</span> rpyc.utils.server <span class="keyword">import</span> ThreadedServer</span><br><span class="line">    server = ThreadedServer(MyService, port=<span class="number">18861</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;服务器启动...&quot;</span>)</span><br><span class="line">    server.start()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#客户端</span></span><br><span class="line"><span class="keyword">import</span> rpyc</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClientService</span>(rpyc.Service):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exposed_client_method</span>(<span class="params">self, msg</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;客户端提供的方法，供服务器回调&quot;&quot;&quot;</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;客户端收到服务器的消息: <span class="subst">&#123;msg&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;客户端处理后: <span class="subst">&#123;msg[::-<span class="number">1</span>]&#125;</span>&quot;</span>  <span class="comment"># 反转字符串</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    conn = rpyc.connect(<span class="string">&quot;localhost&quot;</span>, <span class="number">18861</span>, service=MyClientService())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 调用服务器方法</span></span><br><span class="line">    result = conn.root.server_method(<span class="string">&quot;Hello, Server!&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;客户端收到:&quot;</span>, result)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 让服务器调用客户端的方法</span></span><br><span class="line">    conn.root.call_client(conn._local_root)  <span class="comment"># 传递本地服务实例</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#服务器得到的结果：</span></span><br><span class="line">服务器启动...</span><br><span class="line">客户端已连接</span><br><span class="line">服务器收到: Hello, Server!</span><br><span class="line">服务器正在调用客户端方法...</span><br><span class="line">服务器收到客户端的响应: 客户端处理后: ！端户客，好你</span><br><span class="line">客户端已断开连接</span><br><span class="line"><span class="comment">#客户端得到的结果：</span></span><br><span class="line">客户端收到: 服务器处理后: HELLO, SERVER!</span><br><span class="line">客户端收到服务器的消息: 你好，客户端！</span><br></pre></td></tr></table></figure>
+
+<p>区块链中的的投票、共识、分发</p>
+<p>PBFT(拜占庭容错共识)</p>
+
+
+    <hr/>
+
+    
+        <div class="social-share" data-disabled="weibo,qzone,qq,tencent,douban,linkedin,diandian"></div>
+    
+
+    <div class="blog-post">
+
+    <!--[...]-->
+    
+    <!-- Comments -->
+</div>
+
+    <!-- Tags and Categories links -->
+
+
+</article>
+
+
+</div>
+
+
+<footer class="grey darken-3">
+    <div class="footer-link">
+        
+        
+        
+        
+        
+        
+        
+          <a href="/atom.xml" target="_blank" title="rss_feed"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+        
+    </div>
+    <div class="footer-ps">
+        <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -
+            &copy; 2025 <a
+                    
+            > John Doe</a> - Theme <a href="https://github.com/lazzzis/hexo-theme-mls" target="_blank">MLS</a>
+        </p>
+    </div>
+</footer>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/js/social-share.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+
+<script src="/js/addition.js"></script>
+
+
+<script src="/js/zooming.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script>
+    // https://github.com/srobbin/jquery-backstretch
+    $.backstretch("/css/images/background.jpg?version=6-12-47-16");
+
+    
+
+</script>
+
+
+</body>
+
+</html>
