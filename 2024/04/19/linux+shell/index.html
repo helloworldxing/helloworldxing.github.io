@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<!-- Head -->
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux+shell | 有用的知识</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ls - 列出目录内容  ls: 列出当前目录下的文件和文件夹 ls -l: 以长格式列出详细信息 ls -a: 显示所有文件，包括隐藏文件 ls -R: 递归列出所有子目录的内容   cd - 改变当前目录  cd: 切换到用户的主目录 cd ~: 同上 cd -: 切换到上一个工作目录 cd &#x2F;path&#x2F;to&#x2F;dir: 切换到指定的目录   pwd - 打印当前工作目录  pwd: 显示当前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux+shell">
+<meta property="og:url" content="http://example.com/2024/04/19/linux+shell/index.html">
+<meta property="og:site_name" content="有用的知识">
+<meta property="og:description" content="ls - 列出目录内容  ls: 列出当前目录下的文件和文件夹 ls -l: 以长格式列出详细信息 ls -a: 显示所有文件，包括隐藏文件 ls -R: 递归列出所有子目录的内容   cd - 改变当前目录  cd: 切换到用户的主目录 cd ~: 同上 cd -: 切换到上一个工作目录 cd &#x2F;path&#x2F;to&#x2F;dir: 切换到指定的目录   pwd - 打印当前工作目录  pwd: 显示当前">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-19T07:10:01.000Z">
+<meta property="article:modified_time" content="2025-07-10T07:36:54.070Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="有用的知识" type="application/atom+xml">
+  
+  
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/css/share.min.css">
+    <style>
+        .hljs-line-numbers {
+            text-align: right;
+            border-right: 1px solid #ccc;
+            color: #999;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+    <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+    <!-- 
+<link rel="stylesheet" href="/css/code.css">
+ -->
+    <link rel="stylesheet" href="/css/style.css?version=7-10-39-20" type="text/css">
+    <link rel="stylesheet" href="/css/code.css?version=7-10-39-20" type="text/css">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+
+<header>
+    <div class="navbar-fixed">
+        <nav class="blue darken-3 nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="hide-on-med-and-down">
+                    
+                        <li><a href="/" class="nav-logo">有用的知识</a></li>
+                    
+                    
+                    <li><a class="" href="/">Home</a></li>
+                    
+                    <li><a class="" href="/archives">Archives</a></li>
+                    
+                    <li><a class="" href="/categories">Categories</a></li>
+                    
+                    <li><a class="" href="/tags">Tags</a></li>
+                    
+                    <li><a class="" href="/links">Links</a></li>
+                    
+                    <li><a class="" href="/about">About</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <ul class="side-nav" id="mobile-demo">
+        
+        <li><a class="" href="/">Home</a></li>
+        
+        <li><a class="" href="/archives">Archives</a></li>
+        
+        <li><a class="" href="/categories">Categories</a></li>
+        
+        <li><a class="" href="/tags">Tags</a></li>
+        
+        <li><a class="" href="/links">Links</a></li>
+        
+        <li><a class="" href="/about">About</a></li>
+        
+    </ul>
+    <!--You have to move ul out to make sure this work in mobile environment-->
+</header>
+
+
+<div class="container">
+      <article class="article-full">
+
+    <!-- Title -->
+    <h2 class="blog-item-title">
+        <a href="/2024/04/19/linux+shell/">
+            linux+shell
+        </a>
+    </h2>
+
+    <!-- Date and Author -->
+    <p class="blog-item-meta">
+        Published on 2024 Apr 19 15:10:01
+        
+    
+        </br>
+        Last Updated on 2025 Jul 10 15:36:54
+        
+    </p>
+
+
+    <!-- Content -->
+    <ol>
+<li><p><strong>ls</strong> - 列出目录内容</p>
+<ul>
+<li><code>ls</code>: 列出当前目录下的文件和文件夹</li>
+<li><code>ls -l</code>: 以长格式列出详细信息</li>
+<li><code>ls -a</code>: 显示所有文件，包括隐藏文件</li>
+<li><code>ls -R</code>: 递归列出所有子目录的内容</li>
+</ul>
+</li>
+<li><p><strong>cd</strong> - 改变当前目录</p>
+<ul>
+<li><code>cd</code>: 切换到用户的主目录</li>
+<li><code>cd ~</code>: 同上</li>
+<li><code>cd -</code>: 切换到上一个工作目录</li>
+<li><code>cd /path/to/dir</code>: 切换到指定的目录</li>
+</ul>
+</li>
+<li><p><strong>pwd</strong> - 打印当前工作目录</p>
+<ul>
+<li><code>pwd</code>: 显示当前所在的完整路径</li>
+</ul>
+</li>
+<li><p><strong>cp</strong> - 复制文件或目录</p>
+<ul>
+<li><code>cp source destination</code>: 将源文件复制到目标位置</li>
+<li><code>cp -r source destination</code>: 递归复制目录及其内容</li>
+</ul>
+</li>
+<li><p><strong>mv</strong> - 移动或重命名文件或目录</p>
+<ul>
+<li><code>mv old_name new_name</code>: 重命名文件或目录</li>
+<li><code>mv source destination</code>: 将文件或目录移动到目标位置</li>
+</ul>
+</li>
+<li><p><strong>rm</strong> - 删除文件或目录</p>
+<ul>
+<li><code>rm file</code>: 删除文件</li>
+<li><code>rm -r directory</code>: 递归删除目录及其内容</li>
+<li><code>rm -f file</code>: 强制删除文件，不提示确认</li>
+</ul>
+</li>
+<li><p><strong>mkdir</strong> - 创建新目录</p>
+<ul>
+<li><code>mkdir directory</code>: 创建指定的目录</li>
+<li><code>mkdir -p /path/to/dir</code>: 创建多级目录结构</li>
+</ul>
+</li>
+<li><p><strong>rmdir</strong> - 删除空目录</p>
+<ul>
+<li><code>rmdir directory</code>: 删除空目录</li>
+</ul>
+</li>
+<li><p><strong>touch</strong> - 创建空文件</p>
+<ul>
+<li><code>touch file</code>: 创建一个空文件，如果文件已存在则更新其时间戳</li>
+</ul>
+</li>
+<li><p><strong>chmod</strong> - 更改文件或目录的权限</p>
+<ul>
+<li><code>chmod 644 file</code>: 设置文件的权限，所有者具有读写权限，组和其他用户具有读权限</li>
+<li><code>chmod -R 755 /path/to/dir</code>: 递归设置目录及其内容的权限，所有者具有读写执行权限，组和其他用户具有读执行权限</li>
+</ul>
+</li>
+<li><p><strong>chown</strong> - 更改文件或目录的所有者</p>
+<ul>
+<li><code>chown user:group file</code>: 更改文件的所有者和组</li>
+<li><code>chown -R user:group /path/to/dir</code>: 递归更改目录及其内容的所有者和组</li>
+</ul>
+</li>
+<li><p><strong>find</strong> - 在目录树中搜索文件</p>
+<ul>
+<li><code>find / -name file</code>: 在整个文件系统中搜索名为 file 的文件</li>
+<li><code>find /path/to/dir -type d</code>: 在指定目录及其子目录中搜索目录</li>
+<li><code>find /path/to/dir -type f</code>: 在指定目录及其子目录中搜索文件</li>
+</ul>
+</li>
+<li><p><strong>grep</strong> - 在文件中搜索模式</p>
+<ul>
+<li><code>grep &#39;pattern&#39; file</code>: 在文件中搜索包含 pattern 的行</li>
+<li><code>grep -r &#39;pattern&#39; /path/to/dir</code>: 递归在目录中搜索包含 pattern 的文件</li>
+</ul>
+</li>
+<li><p><strong>sed</strong> - 流编辑器，用于处理文本</p>
+<ul>
+<li><code>sed &#39;s/old/new/g&#39; file</code>: 将文件中的 old 替换为 new</li>
+<li><code>sed -n &#39;3,5p&#39; file</code>: 打印文件的第 3 行到第 5 行</li>
+</ul>
+</li>
+<li><p><strong>awk</strong> - 模式扫描和处理语言</p>
+<ul>
+<li><code>awk &#39;&#123;print $1, $3&#125;&#39; file</code>: 打印文件的每一行的第一列和第三列</li>
+<li><code>awk &#39;/pattern/ &#123;print $0&#125;&#39; file</code>: 打印包含 pattern 的行</li>
+</ul>
+</li>
+<li><p><strong>tar</strong> - 归档文件</p>
+<ul>
+<li><code>tar -cvf archive.tar /path/to/dir</code>: 创建一个包含指定目录的 tar 归档文件</li>
+<li><code>tar -xvf archive.tar</code>: 解压 tar 归档文件</li>
+</ul>
+</li>
+<li><p><strong>gzip</strong> - 使用 Lempel-Ziv 编码压缩文件</p>
+<ul>
+<li><code>gzip file</code>: 压缩文件</li>
+<li><code>gzip -d file.gz</code>: 解压 gzip 压缩的文件</li>
+</ul>
+</li>
+<li><p><strong>bzip2</strong> - 使用 bzip2 算法压缩文件</p>
+<ul>
+<li><code>bzip2 file</code>: 压缩文件</li>
+<li><code>bzip2 -d file.bz2</code>: 解压 bzip2 压缩的文件</li>
+</ul>
+</li>
+<li><p><strong>du</strong> - 检查磁盘使用情况</p>
+<ul>
+<li><code>du -sh /path/to/dir</code>: 显示指定目录的总磁盘使用情况</li>
+</ul>
+</li>
+<li><p><strong>df</strong> - 报告文件系统的磁盘空间使用情况</p>
+<ul>
+<li><code>df -h</code>: 以易读的格式显示磁盘空间使用情况</li>
+</ul>
+</li>
+<li><p><strong>ps</strong> - 显示当前进程状态</p>
+<ul>
+<li><code>ps aux</code>: 显示所有进程及其详细信息</li>
+<li><code>ps -p PID</code>: 显示指定进程的信息</li>
+</ul>
+</li>
+<li><p><strong>top</strong> - 实时显示和管理系统资源</p>
+<ul>
+<li><code>top</code>: 显示实时更新的进程和资源使用情况</li>
+</ul>
+</li>
+<li><p><strong>kill</strong> - 发送信号给进程</p>
+<ul>
+<li><code>kill PID</code>: 发送 SIGTERM 信号给指定的进程</li>
+<li><code>kill -9 PID</code>: 发送 SIGKILL 信号强制终止进程</li>
+</ul>
+</li>
+<li><p><strong>ln</strong> - 创建链接（硬链接或软链接）</p>
+<ul>
+<li><code>ln -s /path/to/source /path/to/link</code>: 创建指向源的软链接</li>
+</ul>
+</li>
+<li><p><strong>uname</strong> - 显示系统信息</p>
+<ul>
+<li><code>uname -a</code>: 显示所有系统信息</li>
+</ul>
+</li>
+<li><p><strong>history</strong> - 显示用户命令历史</p>
+<ul>
+<li><code>history</code>: 显示用户执行过的命令历史</li>
+</ul>
+</li>
+</ol>
+<h1 id="Shell脚本编写学习"><a href="#Shell脚本编写学习" class="headerlink" title="Shell脚本编写学习"></a>Shell脚本编写学习</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>简单输出 	<code>echo &quot;helloworld&quot;</code></p>
+<p>编写完成之后需要给文件加权限	<code>chmod +x ./test_shell.sh</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">shell注释  <span class="comment">#就是注释 单行注释</span></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用Here文档多行注释</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">: 是一个空命令，用于执行后面的 Here 文档，&lt;&lt;<span class="string">&#x27;EOF&#x27;</span> 表示开启 Here 文档，COMMENT 是 Here 文档的标识符，在这两个标识符之间的内容都会被视为注释，不会被执行。</span></span><br><span class="line">:&lt;&lt;EOF</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">EOF</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">以下也是多行注释</span></span><br><span class="line">: &#x27;</span><br><span class="line">这是注释的部分。</span><br><span class="line">可以有多行内容。</span><br><span class="line">&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">echo &quot;Shell 传递参数实例！&quot;;</span><br><span class="line">echo &quot;执行的文件名：$0&quot;;</span><br><span class="line">echo &quot;第一个参数为：$1&quot;;</span><br><span class="line">echo &quot;第二个参数为：$2&quot;;</span><br><span class="line">echo &quot;第三个参数为：$3&quot;;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="variable">$0</span>为执行的文件名（包含文件路径）</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="variable">$1</span> 表示第一个参数，<span class="variable">$2</span> 表示第二个参数</span></span><br></pre></td></tr></table></figure>
+
+<p>为脚本设置可执行权限，并执行脚本，输出结果为：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> +x test.sh</span> </span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test.sh 1 2 3</span></span><br><span class="line">Shell 传递参数实例！</span><br><span class="line">执行的文件名：./test.sh</span><br><span class="line">第一个参数为：1</span><br><span class="line">第二个参数为：2</span><br><span class="line">第三个参数为：3</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">不传参也不会报错</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><strong>创建数组</strong>	<code>my_array=(A B &quot;C&quot; D)</code>	或者	array_name[0]&#x3D;value0<br>读取数组元素值	<code>$&#123;array_name[index]&#125;</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">my_array=(A B &quot;C&quot; D)</span><br><span class="line"></span><br><span class="line">echo &quot;第一个元素为: $&#123;my_array[0]&#125;&quot;</span><br><span class="line">echo &quot;第二个元素为: $&#123;my_array[1]&#125;&quot;</span><br><span class="line">echo &quot;第三个元素为: $&#123;my_array[2]&#125;&quot;</span><br><span class="line">echo &quot;第四个元素为: $&#123;my_array[3]&#125;&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">执行脚本</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">chmod</span> +x test.sh</span> </span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./test.sh</span></span><br><span class="line">第一个元素为: A</span><br><span class="line">第二个元素为: B</span><br><span class="line">第三个元素为: C</span><br><span class="line">第四个元素为: D</span><br></pre></td></tr></table></figure>
+
+<p><strong>关联数组</strong></p>
+<p>使用declare 进行声明	<code>declare -A array_name</code></p>
+<p><strong>-A</strong> 选项就是用于声明一个关联数组。</p>
+<p>关联数组的键是唯一的。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">方法一</span></span><br><span class="line">declare -A site=([&quot;google&quot;]=&quot;www.google.com&quot; [&quot;runoob&quot;]=&quot;www.runoob.com&quot; [&quot;taobao&quot;]=&quot;www.taobao.com&quot;)</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">方法二</span></span><br><span class="line">declare -A site</span><br><span class="line">site[&quot;google&quot;]=&quot;www.google.com&quot;</span><br><span class="line">site[&quot;runoob&quot;]=&quot;www.runoob.com&quot;</span><br><span class="line">site[&quot;taobao&quot;]=&quot;www.taobao.com&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">访问</span></span><br><span class="line">echo $&#123;site[&quot;runoob&quot;]&#125;	# www.runoob.com</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">使用 @ 或 * 可以获取数组中的所有元素</span></span><br><span class="line">echo &quot;数组的元素为: $&#123;site[*]&#125;&quot;</span><br><span class="line">echo &quot;数组的元素为: $&#123;site[@]&#125;&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出结果都为	数组的元素为:www.google.com www.taobao.com www.runoob.com</span></span><br><span class="line">echo &quot;数组的键为: $&#123;!site[*]&#125;&quot;	#获取键</span><br><span class="line">echo &quot;数组的键为: $&#123;!site[@]&#125;&quot;</span><br><span class="line">数组的键为: google runoob taobao</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取数组长度</span></span><br><span class="line">echo &quot;数组元素个数为: $&#123;#site[*]&#125;&quot;</span><br><span class="line">数组元素个数为: 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。</span></span><br><span class="line">val=`expr 2 + 2`</span><br><span class="line">echo &quot;两数之和为 : $val&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">不同于其他	乘号(*)前边必须加反斜杠(\)才能实现乘法运算；</span></span><br><span class="line">val=`expr $a \* $b`</span><br><span class="line">echo &quot;a * b : $val&quot;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">if...then...fi 是条件语句</span></span><br><span class="line">if [ $a -ne $b ] 	#-ne 检测两个数是否不相等，不相等返回 true。</span><br><span class="line">then</span><br><span class="line">   echo &quot;$a -ne $b: a 不等于 b&quot;</span><br><span class="line">else</span><br><span class="line">   echo &quot;$a -ne $b : a 等于 b&quot;</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">自增自减</span></span><br><span class="line">num=5</span><br><span class="line">let num++</span><br><span class="line">num=$((num + 1))</span><br><span class="line">num=$(expr $num + 1)</span><br><span class="line">((num++))</span><br><span class="line">echo $num</span><br></pre></td></tr></table></figure>
+
+<h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-n:不换行输出</span></span><br><span class="line">echo -n &quot;Loading...&quot;</span><br><span class="line">echo &quot; Done!&quot;</span><br><span class="line">Loading... Done!</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">-e 转义字符</span></span><br><span class="line">echo -e &quot;First line\nSecond line&quot;	#\n	换行</span><br><span class="line">First line</span><br><span class="line">Second line</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">文件</span></span><br><span class="line">echo &quot;This will be saved to file&quot; &gt; output.txt	#使用重定向将输出保存到文件</span><br><span class="line">echo &quot;Additional line&quot; &gt;&gt; output.txt	#追加内容到文件</span><br><span class="line">echo &quot;Today is $(date)&quot;	#使用命令替换输出命令结果</span><br><span class="line">Today is Wed Jul 12 14:30:22 CST 2023</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">参数返回，可以显示加：<span class="built_in">return</span> 返回，如果不加，将以最后一条命令运行结果，作为返回值。 <span class="built_in">return</span> 后跟数值 n(0-255)</span></span><br><span class="line">demoFun()&#123;</span><br><span class="line">    echo &quot;这是我的第一个 shell 函数!&quot;</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;-----函数开始执行-----&quot;</span><br><span class="line">demoFun</span><br><span class="line">echo &quot;-----函数执行完毕-----&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+    <hr/>
+
+    
+        <div class="social-share" data-disabled="weibo,qzone,qq,tencent,douban,linkedin,diandian"></div>
+    
+
+    <div class="blog-post">
+
+    <!--[...]-->
+    
+    <!-- Comments -->
+</div>
+
+    <!-- Tags and Categories links -->
+
+
+</article>
+
+
+</div>
+
+
+<footer class="grey darken-3">
+    <div class="footer-link">
+        
+        
+        
+        
+        
+        
+        
+          <a href="/atom.xml" target="_blank" title="rss_feed"><i class="fa fa-rss fa-2x" aria-hidden="true"></i></a>
+        
+    </div>
+    <div class="footer-ps">
+        <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -
+            &copy; 2025 <a
+                    
+            > John Doe</a> - Theme <a href="https://github.com/lazzzis/hexo-theme-mls" target="_blank">MLS</a>
+        </p>
+    </div>
+</footer>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.15/js/social-share.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+
+<script src="/js/addition.js"></script>
+
+
+<script src="/js/zooming.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+<script>
+    // https://github.com/srobbin/jquery-backstretch
+    $.backstretch("/css/images/background.jpg?version=7-10-39-20");
+
+    
+
+</script>
+
+
+</body>
+
+</html>

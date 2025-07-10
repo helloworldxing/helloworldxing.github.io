@@ -14,7 +14,7 @@
 <meta property="og:description" content="1.JAVA 中 queue.add()和queue.offer()的区别queue.add()和queue.offer()都是向队列中插入元素的方法,但它们在队列已满时的行为有所不同。 queue.add()如果队列未满,则将指定的元素插入到队列的尾部。如果队列已满,则抛出IllegalStateException异常,也就是说,此方法不允许插入操作失败。queue.offer()如果队列未满,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-12T05:24:26.791Z">
-<meta property="article:modified_time" content="2025-06-12T05:59:11.008Z">
+<meta property="article:modified_time" content="2025-06-30T10:12:54.964Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -46,8 +46,8 @@
     <!-- 
 <link rel="stylesheet" href="/css/code.css">
  -->
-    <link rel="stylesheet" href="/css/style.css?version=6-12-16-28" type="text/css">
-    <link rel="stylesheet" href="/css/code.css?version=6-12-16-28" type="text/css">
+    <link rel="stylesheet" href="/css/style.css?version=7-10-39-19" type="text/css">
+    <link rel="stylesheet" href="/css/code.css?version=7-10-39-19" type="text/css">
 
 <meta name="generator" content="Hexo 7.1.1"></head>
 
@@ -116,7 +116,7 @@
         
     
         </br>
-        Last Updated on 2025 Jun 12 13:59:11
+        Last Updated on 2025 Jun 30 18:12:54
         
     </p>
 
@@ -124,9 +124,45 @@
     <!-- Content -->
     <h4 id="1-JAVA-中-queue-add-和queue-offer-的区别"><a href="#1-JAVA-中-queue-add-和queue-offer-的区别" class="headerlink" title="1.JAVA 中 queue.add()和queue.offer()的区别"></a>1.JAVA 中 queue.add()和queue.offer()的区别</h4><p>queue.add()和queue.offer()都是向队列中插入元素的方法,但它们在队列已满时的行为有所不同。</p>
 <p><strong>queue.add()</strong><br>如果队列未满,则将指定的元素插入到队列的尾部。<br>如果队列已满,则<strong>抛出IllegalStateException异常</strong>,也就是说,此方法不允许插入操作失败。<br><strong>queue.offer()</strong><br>如果队列未满,则将指定的元素插入到队列的尾部。<br><strong>如果队列已满,则直接返回false,不会抛出任何异常。</strong></p>
-<ol start="2">
-<li></li>
-</ol>
+<h4 id="2-方法的重写规则"><a href="#2-方法的重写规则" class="headerlink" title="2.方法的重写规则"></a>2.方法的重写规则</h4><p>参数列表与被重写方法的参数列表必须完全相同</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">move</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;动物可以移动&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">move</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;狗可以跑和走&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bark</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;狗可以吠叫&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestDog</span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">      <span class="type">Animal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Animal</span>(); <span class="comment">// Animal 对象</span></span><br><span class="line">      <span class="type">Animal</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Dog</span>(); <span class="comment">// Dog 对象</span></span><br><span class="line"> </span><br><span class="line">      a.move();<span class="comment">// 执行 Animal 类的方法</span></span><br><span class="line">      b.move();<span class="comment">//执行 Dog 类的方法</span></span><br><span class="line">      b.bark();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译结果如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TestDog.java:<span class="number">30</span>: cannot find symbol</span><br><span class="line">symbol  : method <span class="title function_">bark</span><span class="params">()</span></span><br><span class="line">location: <span class="keyword">class</span> <span class="title class_">Animal</span></span><br><span class="line">                b.bark();</span><br><span class="line">                 ^</span><br><span class="line"><span class="comment">//因为b的引用类型Animal没有bark方法</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Java进程之间是怎么沟通的？同一个进程的两个线程要怎么交流？"><a href="#3-Java进程之间是怎么沟通的？同一个进程的两个线程要怎么交流？" class="headerlink" title="3.Java进程之间是怎么沟通的？同一个进程的两个线程要怎么交流？"></a>3.Java进程之间是怎么沟通的？同一个进程的两个线程要怎么交流？</h4><p>Java 进程之间主要是通过<strong>管道、信号、共享内存</strong>等方式来通信，这些是操作系统层面的通信机制。</p>
+<p>同一个进程里面，线程可以共享进程的资源，比如内存空间，所以线程之间可以直接通过共享变量来通信。</p>
+<p>除了共享变量，还可以使用同步机制，比如<code>synchronized</code>关键字或者 <code>lock</code> 锁，来 保证线程安全，还有就是使用线程间通信的工具类，比如  <code>wait()</code> 和 <code>notify()</code> 方法进行线程之间的协作，或者使用阻塞队列<code>BlockingQueue</code>等。</p>
+<h4 id="4-Java数据结构中数组的原理"><a href="#4-Java数据结构中数组的原理" class="headerlink" title="4.Java数据结构中数组的原理"></a>4.Java数据结构中数组的原理</h4><p>Java 中的数组是一种固定长度的数据结构，用于存储<strong>同一种数据类型的元素</strong>。<br>数组在 <strong>内存中是连续分配的</strong>，因此支持 <strong>通过下标 O(1) 时间复杂度快速访问</strong>。<br>数组对象在堆上分配，每个数组包含一个头部信息，存储元素类型和数组长度等元数据。<br>Java 数组是强类型的，创建时指定类型和长度，之后不可修改，具有 <strong>类型安全和高效访问</strong> 的特点。<br>不过它的缺点是长度固定，不能动态扩容，因此如果需要更灵活的数据结构，可以使用如 <code>ArrayList</code> 这样的集合类，它其实底层也是通过数组实现的，只不过通过扩容来动态调整大小。<br>所以数组适用于对性能要求较高、长度固定的场景，而集合类更适合灵活增长的需求。</p>
+<h4 id="5-ArrayList-和LinkedList有什么区别"><a href="#5-ArrayList-和LinkedList有什么区别" class="headerlink" title="5.ArrayList 和LinkedList有什么区别"></a>5.ArrayList 和LinkedList有什么区别</h4><p><code>ArrayList</code> 和 <code>LinkedList</code> 都是 <code>List</code> 接口的实现类，但底层实现不同。<br> <code>ArrayList</code> 基于 <strong>动态数组</strong>，元素在内存中是连续存储的，支持快速<strong>随机访问</strong>，适合查询频繁的场景；<br> 而 <code>LinkedList</code> 基于 <strong>双向链表</strong>，元素在内存中不是连续存储的，在<strong>插入和删除</strong>中间元素时性能更好，但<strong>查询效率低</strong>，需要从头或尾遍历。</p>
+<h4 id="6-介绍一下ConcurrentHashMap"><a href="#6-介绍一下ConcurrentHashMap" class="headerlink" title="6.介绍一下ConcurrentHashMap"></a>6.介绍一下ConcurrentHashMap</h4><p><code>ConcurrentHashMap</code> 是 Java 提供的线程安全的哈希表实现，属于 <code>java.util.concurrent</code> 包，是对 <code>HashMap</code> 的并发优化版本，适用于多线程并发读写的场景。它通过多种机制来实现<strong>高效且线程安全的并发访问</strong>。</p>
+<h5 id="为什么不使用HashTable"><a href="#为什么不使用HashTable" class="headerlink" title="为什么不使用HashTable"></a>为什么不使用HashTable</h5><p><code>Hashtable</code> 方法都用 <code>synchronized</code> 修饰，效率低，全表加锁；而 <code>ConcurrentHashMap</code> 是<strong>局部加锁+CAS</strong>，支持更高并发。</p>
+<h4 id="7-什么是CAS"><a href="#7-什么是CAS" class="headerlink" title="7.什么是CAS"></a>7.什么是CAS</h4><p>CAS 是一种原子操作，全称是 <strong>Compare And Swap（比较并交换）</strong>，用于实现多线程环境下的<strong>无锁并发控制</strong>。</p>
+<p>CAS 的基本思想是：</p>
+<p>当线程要更新某个变量时，先比较它当前的值是不是期望值，如果是，则更新为新值；否则就不更新（说明有别的线程已经更新了）。</p>
+<h4 id="8-Spring是怎么实现的"><a href="#8-Spring是怎么实现的" class="headerlink" title="8.Spring是怎么实现的"></a>8.Spring是怎么实现的</h4><p>Spring 是一个<strong>轻量级开源框架</strong>，核心是通过 <strong>IoC（控制反转）和 AOP（面向切面编程）</strong> 实现松耦合、灵活扩展的企业级应用框架。<br>它主要由核心容器、AOP、数据访问、Web&#x2F;MVC、Security 等模块组成，<strong>通过反射、代理、注解和配置文件</strong>等机制实现整个框架的功能。<br>核心实现包括 Bean 的创建与管理、依赖注入、生命周期控制、事件监听、事务管理等。</p>
+<h4 id="9-MyBatis是怎么实现的"><a href="#9-MyBatis是怎么实现的" class="headerlink" title="9.MyBatis是怎么实现的"></a>9.MyBatis是怎么实现的</h4><p>MyBatis 是一款优秀的持久层框架，它本质上是对 JDBC 的高度封装。与 Hibernate 这类全自动 ORM 框架不同，MyBatis 采用半自动映射的方式，开发者需要手写 SQL 语句，通过 XML 文件或注解的方式将 SQL 映射到 Java 方法上，这种方式既保留了 SQL 的灵活性，又简化了 JDBC 的繁琐操作。</p>
+<p>在实现上，MyBatis 首先通过加载主配置文件 <code>mybatis-config.xml</code>，构建出核心的 <code>SqlSessionFactory</code>，用于创建执行数据库操作的 <code>SqlSession</code> 实例。配置文件中会指定数据库连接信息、插件、别名、映射器路径等内容。开发者通过 <code>SqlSession</code> 获取对应的 Mapper 接口代理对象，MyBatis 会为这些接口生成动态代理，在调用方法时，根据方法名查找对应的 SQL 映射语句，并封装参数、执行 SQL。</p>
+<p>MyBatis 的映射文件是其核心组件之一，通过 <code>&lt;select&gt;</code>, <code>&lt;insert&gt;</code>, <code>&lt;update&gt;</code>, <code>&lt;delete&gt;</code> 标签定义 SQL 语句，同时可以指定输入参数类型和返回结果类型。框架内部会将这些 SQL 映射转换为 <code>MappedStatement</code> 对象，统一保存在配置对象 <code>Configuration</code> 中，供后续执行使用。在执行 SQL 时，MyBatis 使用 <code>ParameterHandler</code> 负责将 Java 参数填充到 SQL 语句中，使用 <code>Executor</code> 执行 SQL，最后由 <code>ResultSetHandler</code> 将查询结果封装成 Java 对象返回给用户。</p>
+<p>为了提升性能，MyBatis 提供了一级缓存和二级缓存机制。一级缓存是 SqlSession 级别的，默认开启；而二级缓存是全局共享的，需要在映射器上配置才能启用。此外，MyBatis 还支持插件机制，允许开发者通过实现拦截器（Interceptor）对执行过程中的四大核心对象（Executor、StatementHandler、ParameterHandler、ResultSetHandler）进行增强，比如常见的分页插件 PageHelper 就是通过拦截 SQL 实现的。</p>
+<p>综上，MyBatis 的实现机制可归纳为：配置加载、SQL 映射、动态代理调用、参数与结果处理、执行器执行及插件与缓存扩展。它兼顾了灵活性与易用性，是目前企业级 Java 开发中使用最广泛的 ORM 框架之一。</p>
+<h4 id="10-讲一下IOC和AOP"><a href="#10-讲一下IOC和AOP" class="headerlink" title="10.讲一下IOC和AOP"></a>10.讲一下IOC和AOP</h4><p><strong>IOC（Inversion of Control，控制反转）</strong> 是一种设计思想，它的核心理念是将对象的创建和依赖关系的维护交由框架来管理，而不是由程序员在代码中手动控制。在传统开发中，我们通常会使用 <code>new</code> 关键字主动创建对象并管理依赖，而有了 IOC 之后，Spring 容器会在启动时根据配置或注解自动实例化对象（称为“Bean”），并将它们按照需要注入到其他对象中。比如，在 Spring 中我们可以使用 <code>@Component</code> 或 <code>@Service</code> 标注一个类，再通过 <code>@Autowired</code> 或 <code>@Inject</code> 注解将其注入到依赖它的类中。这样，开发者只需要专注于业务逻辑本身，而不必关注对象如何创建和管理，极大地降低了耦合度，提高了系统的可维护性和可测试性。</p>
+<p>Spring 实现 IOC 的底层原理主要依赖于 BeanFactory 和 ApplicationContext 这两个接口。当 Spring 启动时，它会读取配置文件（或扫描注解）解析 Bean 定义，构建 BeanDefinition 对象并缓存，随后在需要使用时，通过反射机制创建对象并注入依赖。Spring 还支持单例、多例、懒加载、构造器注入、Setter 注入等多种形式的依赖注入方式。</p>
+<hr>
+<p><strong>AOP（Aspect Oriented Programming，面向切面编程）</strong> 是一种关注横切逻辑的编程范式，它的目标是将与业务逻辑无关、但在多个模块中重复出现的代码（如日志记录、安全控制、事务管理等）抽取出来，统一封装成“切面”，从而减少重复代码，提高代码的可重用性和清晰度。在传统编程中，如果在每个方法里都写一遍日志、权限判断等逻辑，既冗余又难以维护，而 AOP 可以实现这些逻辑的集中管理。</p>
+<p>在 Spring 中，AOP 是通过代理机制实现的。对于实现接口的类，Spring 使用 JDK 动态代理；对于普通类，Spring 使用 CGLIB 字节码增强来创建代理类。在执行方法时，Spring 会通过代理类拦截方法调用，根据配置的切点（Pointcut）和通知（Advice）来决定是否在目标方法执行前、执行后或抛出异常后执行额外逻辑。比如我们可以用 <code>@Aspect</code> 和 <code>@Around</code>, <code>@Before</code>, <code>@After</code> 等注解来定义一个切面类，实现统一的日志输出或事务控制。</p>
+<hr>
+<p>总结来说，IOC 和 AOP 是 Spring 框架的两大支柱：IOC 负责管理对象的创建与依赖关系，解耦了组件之间的关系；而 AOP 则用于提取和复用横切关注点，避免了系统中横向重复的非业务代码。两者协同工作，使得基于 Spring 的企业级应用具备了高内聚、低耦合、易扩展的优势。</p>
+<h4 id="11-HashMap的初始大小是16，每次扩容是原来的两倍"><a href="#11-HashMap的初始大小是16，每次扩容是原来的两倍" class="headerlink" title="11.HashMap的初始大小是16，每次扩容是原来的两倍"></a>11.HashMap的初始大小是16，每次扩容是原来的两倍</h4><h4 id="12-线程池及其参数"><a href="#12-线程池及其参数" class="headerlink" title="12.线程池及其参数"></a>12.线程池及其参数</h4><p>线程池的是一种多线程的编程工具，它能控制线程的创建数量，避免过多线程消耗资源。</p>
+<p>参数有：</p>
+<p>核心线程数：线程一直维持的线程数量</p>
+<p>最大线程数：线程池允许的最大线程数量</p>
+<p>线程存活时间：线程空闲时等待新任务的最大时间</p>
+<p>时间单位：线程存活时间的时间单位</p>
+<p>任务队列：存放等待执行任务的队列</p>
+<p>线程工厂：创建线程时使用的工厂</p>
+<p>拒绝策略：当线程数达到最大线程数时，如何处理新任务</p>
+<h5 id="常见的拒绝策略："><a href="#常见的拒绝策略：" class="headerlink" title="常见的拒绝策略："></a>常见的拒绝策略：</h5><p>AbortPolicy：直接抛出异常，默认策略；<br>CallerRunsPolicy：用调用者所在的线程来执行任务；<br>DiscardOldestPolicy：丢弃阻塞队列中靠最前的任务，并执行当前任务；<br>DiscardPolicy：直接丢弃任务；当然也可以根据应用场景实现 RejectedExecutionHandler 接口，自定义饱和策略，如记录日志或持久化存储不能处理的任务</p>
 
 
     <hr/>
@@ -193,7 +229,7 @@
 
 <script>
     // https://github.com/srobbin/jquery-backstretch
-    $.backstretch("/css/images/background.jpg?version=6-12-16-28");
+    $.backstretch("/css/images/background.jpg?version=7-10-39-19");
 
     
 
